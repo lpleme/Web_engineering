@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assign12.css">
+    <title>This will be assignment #12</title>
+</head>
+<body>
+    <h1>Mileage Calculator</h1> 
+        <form name="calculator" method="GET">
+            <label for="startCity">Start City:</label>
+            <input type="text" id="startCity" name="startCity"><br><br>
+            <label for="startState">Start State:</label>
+            <input type="text" id="startState" name="startState"><br><br>
+            <label for="endCity">End City:</label>
+            <input type="text" id="endCity" name="endCity"><br><br>
+            <label for="endState">End State:</label>
+            <input type="text" id="endState" name="endState"><br><br>
+        </form>
+        <form onsubmit="return mileage()" onclick="startState(); endState();" action="/cgi-bin/cs213/mileageAjaxJSON" method="GET">
+            <input type="submit" value="Submit">
+        </form>
+
+<script>
+var jsonPerson = ''{ "trip" :
+   { "startcity" : "Boise",
+      "startstate" : "ID",
+      "endcity" : "Denver",
+      "endstate" : "CO",
+      "miles" : "814",
+      "tmode" :
+       [
+          "Plane",
+          "Car",
+          "Bus",
+          "Bike",
+          "Foot"
+       ]
+    }
+}'';
+function mileage(){
+    $.ajax({
+        url: "/cgi-bin/cs213/mileageAjaxJSON"
+        type: 'GET',
+        cache: false,
+        success: function(result) {
+              alert(jQuery.dataType);
+            if (result) {
+                  var dd = JSON.parse(jsonPerson);
+                alert(result[0].Id)
+            }
+        },
+        error: function() {
+            alert("No");
+        }
+    });
+}
+
+//Validate
+function startState(inputtxt)
+{ 
+var letters = /^[a-zA-Z]{2}/;
+if(inputtxt.value.match(letters))
+{
+alert('Great');
+document.calculator.startState.focus();
+return true;
+}
+else
+{
+alert('Two characters only!');
+return false;
+}
+}
+
+function endState(inputtxt)
+{ 
+var letters = /^[a-zA-Z]{2}/;
+if(inputtxt.value.match(letters))
+{
+alert('Great');
+document.calculator.endState.focus();
+return true;
+}
+else
+{
+alert('Two characters only!');
+return false;
+}
+}
+
+
+</script>
+</body>

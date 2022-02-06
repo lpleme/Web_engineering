@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assign09.css">
+    <title>This will be assignment #9</title>
+</head>
+<body>
+<div class="main">
+  <pre id="USA">
+  <button type="button" onclick="loadDocUSA()">USA</button>
+  </pre>
+  <pre id="Russia">
+  <button type="button" onclick="loadDocRussia()">Russia</button>
+  </pre>
+  <pre id="Canada">
+  <button type="button" onclick="loadDocCanada()">Canada</button>
+  </pre>
+  <pre id="Mexico">
+  <button type="button" onclick="loadDocMexico()">Mexico</button>
+  </pre>
+</div>
+<div class="text"
+  <pre id="JSONf">
+  <input type="text" id="JSON" value="json.txt">
+  <button type = "button" id="JSONbutton" onclick="loadDocJSON()">JSON load</button>
+  </pre>
+</div>
+
+
+<script>
+//Get a JSON
+function loadDocJSON() {
+    var contents = document.getElementById("JSON").value;   
+        if (contents == "json.txt") {
+           var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("JSONf").innerHTML =
+                    this.responseText;
+                }
+            };
+        xhttp.open("GET", "JSON.txt", true);
+        xhttp.send();
+    }
+        if (contents == "json1.txt") {
+           var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("JSONf").innerHTML =
+                    this.responseText;
+                }
+            };
+        xhttp.open("GET", "JSON1.txt", true);
+        xhttp.send();
+    }
+}
+
+//USA
+function loadDocUSA() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("USA").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "usa.txt", true);
+  xhttp.send();
+}
+
+//Russia
+function loadDocRussia() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Russia").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "russia.txt", true);
+  xhttp.send();
+}
+//Canada
+function loadDocCanada() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Canada").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "canada.txt", true);
+  xhttp.send();
+}
+//Mexico
+function loadDocMexico() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Mexico").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "mexico.txt", true);
+  xhttp.send();
+}
+</script>
+</body>

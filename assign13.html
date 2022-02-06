@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assign13.css">
+    <title>BYU-Idaho Music Festival</title>
+</head>
+<body>
+<h1>BYU-Idaho Music Festival</h1>
+<div>
+    <h1>Registration Information</h1>
+        <form action="assign13.php" method="GET" id="performance_form">
+        <div class="form">
+            <h1>Performance Information</h1>
+            <label for="performance">Type</label>
+            <select name="performance" id="performance" onchange="checkDuet()" class="input_fill">
+                <option value="solo">Solo</option>
+                <option value="duet">Duet</option>
+                <option value="concerto">Concerto</option>
+            </select>
+            <label for="location">Building</label>
+            <select name="location" id="location" class="input_fill">
+                <option value="snow">Snow</option>
+                <option value="austin">Austin</option>
+                <option value="taylor">Taylor</option>
+                <option value="ricks">Ricks</option>
+                <option value="stc">STC</option>
+            </select>
+            <label for="room">Room Number</label>
+            <input type="text" id="room" name="room" class="input_fill"><br><br>
+            <label for="time_slot">Time</label>
+            <select name="time_slot" id="time_slot" class="input_fill">
+                <option value="9:00">9:00</option>
+                <option value="9:30">9:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+            </select>
+        </div>
+        <div class="form">
+            <h1>Student Information</h1>
+            <label for="first_name">First Name</label>
+            <input type="first_name" id="first_name" name="first_name" class="input_fill"><br><br>
+            <label for="last_name">Last Name</label>
+            <input type="last_name" id="last_name" name="last_name" class="input_fill"><br><br>
+            <label for="student_id">Student ID</label>
+            <input type="student_id" id="student_id" name="student_id class="input_fill""><br><br>
+            <div id="duetForm" style="display:none;" class="form">
+                <label for="first_name_2">First Name</label>
+                <input type="first_name_2" id="first_name_2" name="first_name_2" class="input_fill"><br><br>
+                <label for="last_name_2">Last Name</label>
+                <input type="last_name_2" id="last_name_2" name="last_name_2" class="input_fill"><br><br>
+                <label for="student_id_2">Student ID</label>
+                <input type="student_id" id="student_id" name="student_id" class="input_fill"><br><br>
+            </div>
+            <label for="skill">Skill Level</label>
+            <select name="skill" id="skill" class="input_fill">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="pre-advanced">Pre-Advanced</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            <label for="instrument">Instrument</label>
+            <select name="instrument" id="instrument" class="input_fill">
+                <option value="piano">Piano</option>
+                <option value="string">String</option>
+                <option value="wind">Wind</option>
+                <option value="organ">Organ</option>
+            </select>
+        </div>
+        <div>
+            <pre id="registered" onload="getContents()">
+            </pre>
+            <button type = "button" id="contents" onsubmit="page()">Register</button>
+            <input type="reset" value="Clear">
+        </div>
+        </form>
+</div>
+<script>
+// validation
+document.getElementById('performance_form').addEventListener('contents', function(e) {
+  var fields = document.querySelectorAll( '#performance_form.input_fill');
+  var value = '';
+  for( var i=0, len = fields.length; i<len; i++ ) {
+    value = value || fields[i].value;
+  }
+  if(!value) {
+    e.preventDefault();
+  }
+});
+//Get data and display it
+function getContents() {
+    var contents = document.getElementById("list").value;   
+        if (contents == file_get_contents) {
+           var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("registered").innerHTML =
+                    this.responseText;
+                }
+            };
+        xhttp.open("GET", "assign13.php", true);
+        xhttp.send();
+    }
+}
+//Send data to directory
+function page(){
+      $.ajax({
+           type: "GET",
+           url: 'assign13.php',
+           success : function (result) {
+            console.log ('success');
+           },
+           error : function () {
+            console.log ('error');
+           }
+});
+//Check duet
+//Works in a testing document but sometimes not this?
+function checkDuet() { 
+  var x = document.getElementById("performance").value;
+  if(x == duet) {
+    document.getElementById("duetForm").style.display = "none";
+  }else{
+    document.getElementById("duetForm").style.display = "block";
+  }
+}
+</script>
+</body>
+

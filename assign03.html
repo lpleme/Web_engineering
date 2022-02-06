@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title><id="#top">Lorenzo Leme's Home Page</title>
+<style>
+header {
+    background-color: linen;
+    opacity: 0.8;
+    text-align: center;
+}
+table.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+select.center1{
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+}
+</style>
+</head>
+<body>
+    <a href="https://www.apple.com/">
+        <img src="bbyc.png" alt="Big Brian Yacht Club" style="width:100px;height:100px;">
+    </a>
+    <p>
+        Go to paragraph styling: 
+        <a href="#paragraphstyling">Paragraph stlying</a>
+    </p>
+    <header>
+        <h1>Welcome to Lorenzo Leme's Home Page</h1> 
+    </header>
+    <p style="text-align: center; list-style-position: inside;">
+        <a href="../index.html">CS 213 Assignments</a>
+    </p>
+    <blockquote>
+        <em>“There's only one thing that can save a man from madness and that's uncertainty.”</em> <b> ― Dmitry Glukhovsky, Metro 2033</b>
+    </blockquote>
+    <p class="text">
+        <img src="metro2033.png" alt="Metro 2033" style="width:25%;">
+    </p>
+    <h2 id="paragraphstyling">Paragraph Styling</h2>
+    <p class="first_p">
+        This is the first paragraph with bold text. Txt is also in the color of hot pink!
+    </p>
+    <p class="second_p">
+        This is the second paragraph with indentation with the words and is in the color of indian red!
+    </p>
+    <p class="third_p">
+        This is the third paragraph with text wavy, text background and opacity, and a new text color!
+    </p>
+    <p style="color: green;">Class Table</p>
+    <table class="center">
+        <tr>
+            <th>Class Code</th>
+            <th>Class Description</th>
+            <th>Section Number</th>
+            <th>Class Time</th>
+            <th>Class Location</th>
+        </tr>
+        <tr>
+            <td>CIT 381</td>
+            <td><p style="color: red;">Business Intel and Anyalytics</p></td>
+            <td>01</td>
+            <td>Online</td>
+            <td><p style="color: blue;">Online</p></td>
+        </tr>
+        <tr>
+            <td>CS 213</td>
+            <td><p style="color: red;">Web Engineering</p></td>
+            <td>01</td>
+            <td>Online</td>
+            <td><p style="color: blue;">Online</p></td>
+        </tr>
+        <tr>
+            <td>CSE 450</td>
+            <td><p style="color: red;">Machine Learning and Data Mining</p></td>
+            <td>01</td>
+            <td>11:30</td>
+            <td><p style="color: blue;">STC 341</p></td>
+        </tr>
+        <tr>
+            <td>MATH 119</td>
+            <td><p style="color: red;">Applied Calculus for Data Analysis</p></td>
+            <td>01</td>
+            <td>12:45</td>
+            <td><p style="color: blue;">RICKS 180</p></td>
+        </tr>
+        <tr>
+            <td>MATH 488</td>
+            <td><p style="color: red;">Statistic and Data Science Consulting</p></td>
+            <td>01</td>
+            <td>8:00</td>
+            <td><p style="color: blue;">HINCKLEY 209</p></td>
+        </tr>
+    </table>
+    <footer>
+        <p>Author: Lorenzo Leme<br>
+        <a href="mailto:lpleme12@me.com">lpleme12@me.com</a></p>
+    </footer>
+    <p>
+        Go to top of page: 
+        <a href="#top">top</a>
+    </p>
+    <p>
+        <a href="https://byui.instructure.com/courses/157464">Visit the CS213 homepage!</a>
+    </p>
+    <p>
+        <a href="https://www.byui.edu/">Visit the BYUI page!</a>
+    </p>
+    <h1>Login</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <br>
+    <form>
+        <label for="food">Favorite foods (atleast 3):</label>
+        <textarea id="food" name="food" rows="3" cols="50">
+          Please input your favorite foods!
+          </textarea>
+          <br><br>
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+    </form>
+    <h2>Types of condiments that you can pick from</h2>
+    
+    <form><ul>
+        <li>
+            <input type="checkbox" id="condiment1" name="condiment1" value="Tomatoe">
+            <label for="condiment1">Tomato</label><br>
+        </li>
+        <li>
+            <input type="checkbox" id="condiment2" name="condiment2" value="Lettuce">
+            <label for="condiment2">Lettuce</label><br>
+        </li>
+        <li>
+            <input type="checkbox" id="condiment3" name="condiment3" value="Onion">
+            <label for="condiment3">Onion</label><br>
+        </li>
+    </ul></form>
+    <h2>Age</h2>
+    <form>
+        <ul>
+            <li>
+                <input type="radio" id="age1" name="age" value="18">
+                <label for="age1">0 - 18</label>  
+            </li>
+            <li>
+                <input type="radio" id="age2" name="age" value="30">
+                <label for="age2">19 - 30</label>  
+            </li>
+            <li>
+                <input type="radio" id="age3" name="age" value="50">
+                <label for="age3">31 - 50</label>  
+            </li>
+        </ul>
+    </form>
+    <div>
+        <select class="center1">
+          <option value="0">Type of Food:</option>
+          <option value="1">Pizza</option>
+          <option value="2">Hamburger</option>
+          <option value="2">Hotdog</option>
+        </select>
+      </div>
+    <img src="misc.jpg" alt="misc" width="100" height="100">
+      
+</body>
+</html>

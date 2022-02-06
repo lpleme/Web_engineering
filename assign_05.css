@@ -1,0 +1,149 @@
+body {
+    background-color: aquamarine;
+}
+header {
+    display: block;
+    text-align: center;
+}
+header img {
+    display: inline-block;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-color: black;
+}
+.F1 {
+    text-align: center;
+    font-size: small;
+}
+.F1 img {
+    max-width: 100%;
+    height: auto;
+}
+.wrapper {
+    border: 2px solid rgb(189, 72, 72);
+    width: auto;
+}
+.teams {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+.teams>* {
+    flex: 1 1 160px;
+    margin: 10px;
+}
+.teams img {
+    max-width: 100%;
+    height: auto;
+}
+@media (min-width: 800px) {
+    .teams {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .teams img {
+        max-width: 75%;
+        height: auto;
+    }
+
+    #mercedes {
+        flex: 50%;
+    }
+
+    #ferrari {
+        flex: 50%;
+    }
+
+    #redbull {
+        flex: 50%;
+    }
+
+    #mclaren {
+        flex: 50%;
+    }
+
+    #alpine {
+        flex: 100%;
+    }
+    
+    #haas {
+        flex: 100%;
+    }
+
+    #williams {
+        flex: 100%;
+    }
+
+    #aston {
+        flex: 100%;
+    }
+
+    #alfa {
+        flex: 100%;
+    }
+
+    #tauri {
+        flex: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .teams {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .teams img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    #mercedes {
+        flex: 33%;
+    }
+
+    #ferrari {
+        flex: 33%;
+    }
+
+    #redbull {
+        flex: 33%;
+    }
+
+    #mclaren {
+        flex: 50%;
+    }
+
+    #alpine {
+        flex: 50%;
+    }
+
+    #haas {
+        flex: 50%;
+    }
+
+    #williams {
+        flex: 50%;
+    }
+
+    #aston {
+        flex: 50%;
+    }
+
+    #alfa {
+        flex: 50%;
+    }
+
+    #tauri {
+        flex: 50%;
+    }
+}
+footer {
+    text-align: center;
+}
